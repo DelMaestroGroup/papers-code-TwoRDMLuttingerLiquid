@@ -58,7 +58,7 @@ def two_rdm_fixed_delta_R(r, rp, delta_R, epsilon, K, L, eta=0.0):
  
 def two_rdm(x2p, x1p, x2, x1, epsilon, K, L, eta=0.0):
     """Evaluate rho_2(x2',x1';x2,x1) by summing the three channels."""
-    t1, t2, t3 = two_rdm_terms(x2p, x1p, x2, x1, epsilon, K, L, eta)
+    t1, t2, t3 = two_rdm_terms(x2p, x1p, x1, x2, epsilon, K, L, eta)
     return t1 + t2 + t3
 
 def two_rdm_terms(x2p, x1p, x2, x1, epsilon, K, L, eta=0.0):
@@ -114,15 +114,14 @@ def two_rdm_channel_envelopes(x2p, x1p, x2, x1, epsilon, K, L, eta=0.0):
 
     return (theta_1, theta_2, theta_3), (envelope_1, envelope_2, envelope_3)
 
-
 def wick_residual_direct(r, rp, d, epsilon, K, L, eta=0.0):
     """rho_2-A[rho_1 rho_1] on the direct (r,r',d) slice."""
     return wick_residual(*direct_coordinates(r, rp, d), epsilon, K, L, eta)
  
 def wick_two_rdm_from_one_rdm(x2p, x1p, x2, x1, epsilon, K, L):
     """Antisymmetrized product of two 1RDMs at the same value of K."""
-    direct = one_rdm(x2p, x1, epsilon, K, L) * one_rdm(x1p, x2, epsilon, K, L)
-    exchange = one_rdm(x2p, x2, epsilon, K, L) * one_rdm(x1p, x1, epsilon, K, L)
+    direct = one_rdm(x2p, x2, epsilon, K, L) * one_rdm(x1p, x1, epsilon, K, L)
+    exchange = one_rdm(x2p, x1, epsilon, K, L) * one_rdm(x1p, x2, epsilon, K, L)
     return direct - exchange
 
 def wick_residual(x2p, x1p, x2, x1, epsilon, K, L, eta=0.0):
