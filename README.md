@@ -1,5 +1,5 @@
 [![Paper](https://img.shields.io/badge/paper-arXiv%3AXXXX.YYYYY-B31B1B.svg)](https://arxiv.org/abs/XXXX.YYYYY)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://zenodo.org/badge/latestdoi/XXXXYYYYY)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21384640.svg)](https://zenodo.org/badge/latestdoi/21384640)
 
 # The two particle density matrix of a Luttinger Liquid
 
